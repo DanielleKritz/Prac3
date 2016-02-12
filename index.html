@@ -23,14 +23,13 @@
 		<div class="bottombit">
 			<p class="explanation">Intrepid spy, your next dead drop location is 37.4258709,-122.1712977.</p>
 			<div id="button">Refresh GPS: <div id="timer"></div></div>
-			<button onclick="getLocation()">Get the Drop</button>
 			
 			<div class="area">
 				<div class="box box2"><div id="longitude">Blah</div></div>
 				<div class="box box1"><div id="latitude">Blah</div></div>	
 			</div>
-			
-		
+			<button onclick="getLocation()">Get the Drop</button>
+			<div id="mapholder"></div>
 
 
 		<script>
@@ -47,7 +46,10 @@
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude;
 	y.innerHTML = "Longitude: " + position.coords.longitude;
-
+	var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 }
 </script>
 	</body>
