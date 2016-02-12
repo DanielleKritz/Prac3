@@ -45,9 +45,9 @@
 }
 function showPosition(position) {
 	var lat = position.coords.latitude;
-	var long = position.coords.longitude
-    x.innerHTML = "Latitude: " + lat.toFixed(2);
-	y.innerHTML = "Longitude: " + long.toFixed(2);
+	var long = position.coords.longitude;
+    x.innerHTML = "Latitude: " + lat.toFixed(5);
+	y.innerHTML = "Longitude: " + long.toFixed(5);
 	var latlon = position.coords.latitude + "," + position.coords.longitude;
     var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
     +latlon+"&zoom=14&size=400x300&sensor=false";
